@@ -6,7 +6,7 @@ const MongoClient = require('mongodb').MongoClient;
 
 const app = express();
 
-const connectionString = "";
+const connectionString = "mongodb+srv://jemin:_jemin$dangashiya_@cluster0.ct3jb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 // connect node to mongodb
 MongoClient.connect(connectionString, {
@@ -24,12 +24,11 @@ MongoClient.connect(connectionString, {
                 })
                 .catch(error => console.error(error))
         })
-
         app.get('/post', (req, res) => {
             const users = db.collection('users');
             users.insertOne({
-                    firstName: "Shaikh 1",
-                    lastName: "Irshad 1"
+                    firstName: "Jemin",
+                    lastName: "Dangashiya"
                 }).then(result => {
                     res.send(results)
                 })
